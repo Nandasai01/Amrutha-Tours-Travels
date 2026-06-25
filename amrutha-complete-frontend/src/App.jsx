@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className='app'>
+        <SpeedInsights />
         <Navbar />
 
         <main>
