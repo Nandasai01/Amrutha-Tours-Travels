@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
@@ -49,6 +50,7 @@ export default function App() {
           <a href='tel:+919949666526' className='float-btn call' title='Call us'>📞</a>
           <a href='https://wa.me/919949666526' className='float-btn whatsapp' title='WhatsApp'>💬</a>
         </div>
+        <Analytics />
       </div>
     </BrowserRouter>
   );

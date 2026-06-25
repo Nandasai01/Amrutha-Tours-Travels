@@ -1,0 +1,65 @@
+# Vercel Web Analytics Implementation
+
+## Overview
+Successfully implemented Vercel Web Analytics for the Amrutha Tours & Travels React + Vite project following the latest official documentation from https://vercel.com/docs/analytics/quickstart.
+
+## Changes Made
+
+### 1. Package Installation
+- **Added dependency**: `@vercel/analytics@^2.0.1` 
+- Package manager: npm
+- Updated files:
+  - `package.json` - Added @vercel/analytics to dependencies
+  - `package-lock.json` - Updated with new dependency tree
+
+### 2. Analytics Integration
+- **Modified file**: `src/App.jsx`
+- **Changes**:
+  - Added import: `import { Analytics } from '@vercel/analytics/react';`
+  - Added `<Analytics />` component at the end of the app structure (before closing `</div>` and `</BrowserRouter>`)
+
+### 3. Framework-Specific Implementation
+Since this is a **React + Vite** project, I followed the React-specific instructions from the Vercel documentation:
+- Used the React-specific import path: `@vercel/analytics/react`
+- Placed the Analytics component at the root level of the application structure
+- The component will automatically track page views and collect analytics data
+
+## Verification
+
+### Build Test
+✅ **Build successful**: The project builds without errors
+- Command: `npm run build`
+- Result: Successfully built production bundle (203.50 kB gzipped)
+- No compilation errors or warnings
+
+### Code Quality
+- Linter: Not configured in this project
+- Tests: Not configured in this project
+- Manual code review: Changes follow existing code patterns and conventions
+
+## Implementation Details
+
+The Analytics component has been strategically placed at the end of the app structure within the BrowserRouter context, ensuring:
+1. Analytics loads after main content for optimal performance
+2. All route changes are tracked automatically
+3. The component is part of the React tree and can access routing context
+4. No impact on existing functionality
+
+## Next Steps for Deployment
+
+To fully enable Web Analytics on Vercel:
+1. Deploy this application to Vercel
+2. Navigate to the Vercel dashboard → Analytics
+3. Enable Web Analytics for this project
+4. Once enabled, the analytics will automatically start collecting visitor data
+5. Check the Network tab for requests to `/_vercel/insights/*` to verify it's working
+
+## Technical Notes
+
+- **Version installed**: @vercel/analytics v2.0.1 (latest at time of implementation)
+- **Framework**: React 18.2.0 with Vite 5.0.0
+- **Package manager**: npm (package-lock.json)
+- **Import path used**: `@vercel/analytics/react` (framework-specific)
+- **Deployment target**: Vercel platform
+
+The implementation follows Vercel's best practices and is production-ready.
